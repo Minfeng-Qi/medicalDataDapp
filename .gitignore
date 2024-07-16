@@ -1,0 +1,19 @@
+# Ignore environment variable files
+.env
+
+# Ignore build contracts JSON files
+build/contracts/*.json
+
+# Ignore node_modules directories
+/server/node_modules
+/client/node_modules
+
+# Other common ignores
+.DS_Store
+/node_modules
+/dist
+/tmp
+.idea
+.vscode
+*.log
+*.lock
