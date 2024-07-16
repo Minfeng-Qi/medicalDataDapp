@@ -55,7 +55,7 @@ medical-data-dApp/
 
 ```bash
 git clone https://github.com/Minfeng-Qi/medicalDataDapp.git
-cd ipfs-ethereum-dapp
+cd medical-data-dapp
 ```
 
 ### 2. Install Dependencies
