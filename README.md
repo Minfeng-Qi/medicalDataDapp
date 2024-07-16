@@ -54,7 +54,7 @@ medical-data-dApp/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-repo/ipfs-ethereum-dapp.git
+git clone https://github.com/Minfeng-Qi/medicalDataDapp.git
 cd ipfs-ethereum-dapp
 ```
 
