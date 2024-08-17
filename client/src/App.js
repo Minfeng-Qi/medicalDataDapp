@@ -1,13 +1,16 @@
 import React from 'react';
-import DataForm from './components/DataForm';
+import UserForm from './components/UserForm';
+import MedicalDataForm from './components/MedicalDataForm';
+import AccessControlForm from './components/AccessControlForm';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h1>Submit Data to IPFS and Record Hash on Ethereum</h1>
-      <DataForm />
+    <div>
+      <UserForm />
+      <MedicalDataForm />
+      <AccessControlForm />
     </div>
   );
-}
+};
 
 export default App;
