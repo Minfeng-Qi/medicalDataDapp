@@ -8,7 +8,6 @@ const MedicalDataForm = () => {
   const [address, setAddress] = useState('');
   const [dataOwner, setDataOwner] = useState('');
   const [dataType, setDataType] = useState('');
-  const [fileContent, setFileContent] = useState('');
 
   useEffect(() => {
     const web3Instance = new Web3('http://localhost:7545');
@@ -39,27 +38,19 @@ const MedicalDataForm = () => {
     }
 
     try {
-      const reader = new FileReader();
-      reader.onload = async (event) => {
-        const content = event.target.result;
-        setFileContent(content);
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('address', address);
+      formData.append('dataOwner', dataOwner);
+      formData.append('dataType', dataType);
 
-        const formData = new FormData();
-        formData.append('file', file);
-        formData.append('address', address);
-        formData.append('dataOwner', dataOwner);
-        formData.append('dataType', dataType);
-        formData.append('fileContent', content); // Add file content to form data
+      const response = await axios.post('http://localhost:5000/api/medicalData/upload', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
 
-        const response = await axios.post('http://localhost:5000/api/medicalData/upload', formData, {
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          }
-        });
-
-        setStatus(`File uploaded to IPFS with hash: ${response.data.ipfsHash}`);
-      };
-      reader.readAsText(file);
+      setStatus(`File uploaded to IPFS with hash: ${response.data.ipfsHash}`);
     } catch (error) {
       setStatus(`Error: ${error.message}`);
     }
