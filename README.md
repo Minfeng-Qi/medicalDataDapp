@@ -2,8 +2,7 @@
 
 ## Overview
 
-This project demonstrates a decentralized application (DApp) that allows users to upload medical files to IPFS and record the IPFS hash on the Ethereum blockchain. The frontend is built with React, and the backend is built with Node.js and Express. The smart contract is developed using Solidity and deployed with Truffle. Ganache is used as the local Ethereum blockchain for development and testing.
-
+This project demonstrates a decentralized application (DApp) that allows users to upload medical files to IPFS and record the IPFS hash on the Ethereum blockchain. The frontend is built with React, and the backend is built with Node.js and Express. The smart contract is developed using Solidity and deployed with Truffle. Ganache is used as the local Ethereum blockchain for development and testing. In UserManagement.sol, 'userID' is the primary key the list that contain  'userName', 'Role', 'Department', 'userAccess' and 'userID'. Likewise, in MedicalDataManagement.sol, the primary key is 'dataOnwer' (patient'Name), 'dataType', 'ipfsCID', 'dataID' are in the list. Two list are ralated by the key of 'userName' and 'dataOwner'.
 ## Project Architecture
 
 1. **Frontend**:
