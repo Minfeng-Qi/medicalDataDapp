@@ -118,4 +118,4 @@ npm start
 
 ### 9. Access the DApp
 
-Open your browser and go to http://localhost:3000.
+Open your browser and go to http://localhost:5000.
